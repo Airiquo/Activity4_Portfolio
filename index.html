@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport meta tag: required for responsive layout on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal portfolio: about me, projects and contact.">
+  <title>John Paul Sarmiento | Portfolio</title>
+  <!-- Fonts: Doto (dot-matrix display) and Space Mono (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVIGATION -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">jp.sarmiento<span class="accent">_</span></a>
+
+      <!-- Hamburger button: visible on mobile only (see script.js) -->
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about"><span class="idx">01</span> about</a></li>
+          <li><a href="#projects"><span class="idx">02</span> projects</a></li>
+          <li><a href="#contact"><span class="idx">03</span> contact</a></li>
+        </ul>
+        <!-- Dark / light mode toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme">
+          <span class="theme-dot"></span><span id="themeLabel">dark</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO / ABOUT ME -->
+    <section class="hero container" id="about">
+      <div class="hero-text">
+        <p class="tag">// hello, world</p>
+        <h1>Hi, I'm <span class="name">John Paul Sarmiento</span><span class="cursor accent">_</span></h1>
+        <p class="lead">I'm an IT student who builds clean, calm interfaces and experiments with local AI tools, from mobile apps to email classifiers.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects"><span class="prompt">$</span> view projects</a>
+          <a class="btn btn-outline" href="#contact"><span class="prompt">$</span> get in touch</a>
+        </div>
+
+        <!-- Short bio, styled as a terminal window -->
+        <div class="terminal" role="group" aria-label="Short bio">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>about.md</span></div>
+          <p><b>$</b> whoami</p>
+          <p class="out">John Paul Sarmiento · BSIT 3E-G2 · GitHub: Airiquo</p>
+          <p><b>$</b> cat bio.txt</p>
+          <p class="out">I'm a third-year BSIT student who enjoys turning ideas into working apps. I like readable code, good typography and plenty of white space, and I'm curious about running language models locally.</p>
+          <p><b>$</b> ls skills/</p>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git</li><li>UI design</li><li>RAG</li><li>Local LLMs</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="images/profile.jpg" width="900" height="900" alt="Portrait of the portfolio owner wearing a dark suit and white shirt against a plain light background">
+        </div>
+        <figcaption><span class="dot"></span> IMG_001 · portrait</figcaption>
+      </figure>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section class="projects container" id="projects">
+      <p class="tag">// selected work</p>
+      <h2>Projects<span class="accent">_</span></h2>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-num">01</span>
+          <h3>Dugo+</h3>
+          <p>Real-time blood donor matching for hospitals and families. A web platform with donor, requester and hospital dashboards, SMS and email alerts, and consent-based privacy.</p>
+          <ul class="chips"><li>UI design</li><li>HTML</li><li>CSS</li></ul>
+          <a class="card-link" href="https://github.com/Airiquo/dugo_html_mockups">view on github →</a>
+        </article>
+
+        <article class="card">
+          <span class="card-num">02</span>
+          <span class="role-tag">role: contributor</span>
+          <h3>agap.ai</h3>
+          <p>Mobile client of AGAP.ai, built with Expo and TypeScript and connected to a backend API. A team project where I contribute to the app.</p>
+          <ul class="chips"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Team project</li></ul>
+          <a class="card-link" href="https://github.com/tephL/agap.ai" target="_blank" rel="noopener">view repo →</a>
+        </article>
+
+        <article class="card">
+          <span class="card-num">03</span>
+          <h3>Email Classifier</h3>
+          <p>Converts PST email archives to text, indexes them in a RAG pipeline, then classifies each email with a local Llama 3.2 model.</p>
+          <ul class="chips"><li>RAG</li><li>Llama 3.2</li><li>Local LLM</li><li>PST to TXT</li></ul>
+          <span class="card-link private">private repo · code on request</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. FOOTER / CONTACT -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <p class="tag">// contact</p>
+      <h2>Let's talk<span class="accent">_</span></h2>
+
+      <div class="terminal terminal-dark" role="group" aria-label="Contact links">
+        <div class="terminal-bar"><i></i><i></i><i></i><span>contact --list</span></div>
+        <ul class="contact-list">
+          <li><span class="key">email</span><a href="mailto:sjohnpaul012@gmail.com">your.email@example.com</a></li>
+          <li><span class="key">github</span><a href="https://github.com/Airiquo" target="_blank" rel="noopener">github.com/Airiquo</a></li>
+        </ul>
+      </div>
+
+      <p class="copyright">© <span id="year">2026</span> John Paul Sarmiento · Built with HTML, CSS and JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
